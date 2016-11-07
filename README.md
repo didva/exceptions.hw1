@@ -23,22 +23,22 @@ Implement Vehicle class hierarchy. There should be the following:
 This abstract parent class has private instance variables, mutator methods, accessor methods, and constructor parameters for: Year manufactured; Make; Model.
 2. Child Classes: Car, Boat, Airplane. 
 Class Vehicle has child classes which have additional private instance variables, mutator methods, accessor methods, and constructor parameters for:
-```
-    Car has "int horsepower"; 
-    Boat has "boolean motorized"; 
-    Airplane has "int maximumHeightFeet".
-```
+
+            Car has "int horsepower"; 
+            Boat has "boolean motorized"; 
+            Airplane has "int maximumHeightFeet".
+
 3. Each of the Car, Boat, and Airplane classes must override the equals() and toString() methods.
-```
-    Methods equals(): 
-        Cars are equal if their horsepower is within 10 of one another. 
-        Boats are equal if they are both motorized, or both unmotorized. 
-        Airplanes are equal if their maximumHeightFeet is within 1000 of one another.         
-    The toString methods must return a String in these formats: 
-        This car is a 1999 Toyota Corrola with 140 hp. 
-        This boat is a 1980 Bayliner Extreme (with motor). 
-        This airplane is a 1998 ABC Motors Comac that can reach 10000 feet.
-```
+
+        Methods equals(): 
+            Cars are equal if their horsepower is within 10 of one another. 
+            Boats are equal if they are both motorized, or both unmotorized. 
+            Airplanes are equal if their maximumHeightFeet is within 1000 of one another.         
+        The toString methods must return a String in these formats: 
+            This car is a 1999 Toyota Corrola with 140 hp. 
+            This boat is a 1980 Bayliner Extreme (with motor). 
+            This airplane is a 1998 ABC Motors Comac that can reach 10000 feet.
+
 4. Implementing Steerable Interface. 
 ```
     Each of the Car, Boat, and Airplane classes must implement the Steerable interface. 
