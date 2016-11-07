@@ -33,8 +33,7 @@ Class Vehicle has child classes which have additional private instance variables
     Methods equals(): 
         Cars are equal if their horsepower is within 10 of one another. 
         Boats are equal if they are both motorized, or both unmotorized. 
-        Airplanes are equal if their maximumHeightFeet is within 1000 of one another.
-         
+        Airplanes are equal if their maximumHeightFeet is within 1000 of one another.         
     The toString methods must return a String in these formats: 
         This car is a 1999 Toyota Corrola with 140 hp. 
         This boat is a 1980 Bayliner Extreme (with motor). 
@@ -49,10 +48,9 @@ Class Vehicle has child classes which have additional private instance variables
     Please note, that conditions for equality are the same as for equals methods.
 ```
 5. Implementing Steerable Interface. 
-
+```
     Each of the Car, Boat, and Airplane classes must implement the Steerable interface. 
-    This interface has methods to accelerate(), steerLeft(), and steerRight().
-   
+    This interface has methods to accelerate(), steerLeft(), and steerRight().   
         Methods accelerate():
             Cars that accelerate simply return "fire pistons, turn wheels"; 
             Boats that accelerate simply return "jet water";
@@ -65,7 +63,7 @@ Class Vehicle has child classes which have additional private instance variables
             Cars that steer right simply return "turn wheels right"; 
             Boats that steer right simply return "turn tiller right"; 
             Airplanes that steer right simply return "lift wing flaps to turn right".
-
+```
 3 Bank Account
 --------------
 Create class that implements BankAccount interface. Your task is to write that class.
@@ -88,7 +86,7 @@ BankAccounts also have the following methods:
 4. **deposit** - adds money to the account;
 5. **addInterest** adds interest to the account. It adds one year's interest to the account (at the account's individual interest rate). For example, if the balance is $1000.00 and the rate is 10%, then addInterest() increases the balance to $1100 ($1000 plus 10% of $1000); 
 6. **setRate** - changes the interest rate on this account;
-7. **toString** - returns a String representing this account. The String is of the form "Account #N, ($bbb.b)", where N is the account number and bbb.b is the account balance. Balance must have exactly two digits after the decimal with DOWN rounding.
+7. **toString** - returns a String representing this account. The String is of the form "Account #N, ($bbb.bb)", where N is the account number and bbb.bb is the account balance. Balance must have exactly two digits after the decimal with DOWN rounding.
 
 4 Transaction management for Bank Account
 -----------------------------------------
