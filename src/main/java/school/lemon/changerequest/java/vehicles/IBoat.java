@@ -1,6 +1,6 @@
 package school.lemon.changerequest.java.vehicles;
 
-public interface IBoat extends IVehicle, Comparable<IBoat> {
+public interface IBoat extends IVehicle {
 
     /**
      * Is boat motorized

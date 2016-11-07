@@ -1,6 +1,6 @@
 package school.lemon.changerequest.java.vehicles;
 
-public interface ICar extends IVehicle, Comparable<ICar> {
+public interface ICar extends IVehicle {
 
     /**
      * Get car horsepower

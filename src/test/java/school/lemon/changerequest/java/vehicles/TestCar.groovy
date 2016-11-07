@@ -82,35 +82,6 @@ class TestCar extends Specification {
         car.steerRight() == "turn wheels right"
     }
 
-    def "Compare to greater"() {
-        given:
-        def car1 = createCar(2006, "Audi", "TT", 150)
-        def car2 = createCar(2006, "Audi", "TT", 161)
-
-        expect:
-        car1.compareTo(car2) < 0
-    }
-
-    def "Compare to lower"() {
-        given:
-        def car1 = createCar(2006, "Audi", "TT", 150)
-        def car2 = createCar(2006, "Audi", "TT", 139)
-
-        expect:
-        car1.compareTo(car2) > 0
-    }
-
-    def "Compare to same"() {
-        expect:
-        createCar(2006, "Audi", "TT", value1).compareTo(createCar(2006, "Audi", "TT", value2)) == 0
-
-        where:
-        value1 | value2
-        150    | 150
-        140    | 150
-        150    | 140
-    }
-
     def "Equals"() {
         expect:
         createCar(2016, "Bmw", "X6", value1).equals(createCar(2006, "Audi", "TT", value2))

@@ -82,35 +82,6 @@ class TestAirplane extends Specification {
         airplane.steerRight() == "lift wing flaps to turn right"
     }
 
-    def "Compare to greater"() {
-        given:
-        def airplane1 = createAirplane(2006, "Boeing", "747", 7000);
-        def airplane2 = createAirplane(2006, "Boeing", "747", 8001);
-
-        expect:
-        airplane1.compareTo(airplane2) < 0
-    }
-
-    def "Compare to lower"() {
-        given:
-        def airplane1 = createAirplane(2006, "Boeing", "747", 7000);
-        def airplane2 = createAirplane(2006, "Boeing", "747", 5999);
-
-        expect:
-        airplane1.compareTo(airplane2) > 0
-    }
-
-    def "Compare to same"() {
-        expect:
-        createAirplane(2006, "Boeing", "747", value1).compareTo(createAirplane(2006, "Boeing", "747", value2)) == 0
-
-        where:
-        value1 | value2
-        150    | 150
-        140    | 150
-        150    | 140
-    }
-
     def "Equals"() {
         expect:
         createAirplane(2006, "Boeing", "747", value1).equals(createAirplane(2011, "Boeing1", "777", value2))

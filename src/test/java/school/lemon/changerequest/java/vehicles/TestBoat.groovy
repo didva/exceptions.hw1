@@ -2,11 +2,13 @@ package school.lemon.changerequest.java.vehicles
 
 import spock.lang.Specification
 
+import static school.lemon.changerequest.java.vehicles.VehicleFactory.createBoat
+
 class TestBoat extends Specification {
 
     def "Get/Set manufactured year"() {
         given:
-        def boat = VehicleFactory.createBoat(1980, "Bayliner", "Extreme", true);
+        def boat = createBoat(1980, "Bayliner", "Extreme", true)
 
         when:
         boat.setManufacturedYear(2007)
@@ -17,7 +19,7 @@ class TestBoat extends Specification {
 
     def "Get/Set make"() {
         given:
-        def boat = VehicleFactory.createBoat(1980, "Bayliner", "Extreme", true);
+        def boat = createBoat(1980, "Bayliner", "Extreme", true)
 
         when:
         boat.setMake("BMW")
@@ -28,7 +30,7 @@ class TestBoat extends Specification {
 
     def "Get/Set model"() {
         given:
-        def boat = VehicleFactory.createBoat(1980, "Bayliner", "Extreme", true);
+        def boat = createBoat(1980, "Bayliner", "Extreme", true)
 
         when:
         boat.setModel("X6")
@@ -39,7 +41,7 @@ class TestBoat extends Specification {
 
     def "Is motorized"() {
         given:
-        def boat = VehicleFactory.createBoat(1980, "Bayliner", "Extreme", true);
+        def boat = createBoat(1980, "Bayliner", "Extreme", true)
 
         when:
         boat.setMotorized(false)
@@ -50,7 +52,7 @@ class TestBoat extends Specification {
 
     def "To String with motor"() {
         given:
-        def boat = VehicleFactory.createBoat(1980, "Bayliner", "Extreme", true);
+        def boat = createBoat(1980, "Bayliner", "Extreme", true)
 
         expect:
         boat.toString() == "This boat is a 1980 Bayliner Extreme (with motor)."
@@ -58,7 +60,7 @@ class TestBoat extends Specification {
 
     def "To String without motor"() {
         given:
-        def boat = VehicleFactory.createBoat(1980, "Bayliner", "Extreme", false);
+        def boat = createBoat(1980, "Bayliner", "Extreme", false)
 
         expect:
         boat.toString() == "This boat is a 1980 Bayliner Extreme."
@@ -66,7 +68,7 @@ class TestBoat extends Specification {
 
     def "Accelerate"() {
         given:
-        def boat = VehicleFactory.createBoat(1980, "Bayliner", "Extreme", true);
+        def boat = createBoat(1980, "Bayliner", "Extreme", true)
 
         expect:
         boat.accelerate() == "jet water"
@@ -74,7 +76,7 @@ class TestBoat extends Specification {
 
     def "Steer left"() {
         given:
-        def boat = VehicleFactory.createBoat(1980, "Bayliner", "Extreme", true);
+        def boat = createBoat(1980, "Bayliner", "Extreme", true)
 
         expect:
         boat.steerLeft() == "turn tiller left"
@@ -82,7 +84,7 @@ class TestBoat extends Specification {
 
     def "Steer right"() {
         given:
-        def boat = VehicleFactory.createBoat(1980, "Bayliner", "Extreme", true);
+        def boat = createBoat(1980, "Bayliner", "Extreme", true)
 
         expect:
         boat.steerRight() == "turn tiller right"
@@ -90,29 +92,29 @@ class TestBoat extends Specification {
 
     def "Compare to greater"() {
         given:
-        def boat1 = VehicleFactory.createBoat(1980, "Bayliner", "Extreme", false);
-        def boat2 = VehicleFactory.createBoat(1980, "Bayliner", "Extreme", true);
+        def boat1 = createBoat(1980, "Bayliner", "Extreme", false)
+        def boat2 = createBoat(1980, "Bayliner", "Extreme", true)
 
         expect:
         boat1.compareTo(boat2) < 0
     }
 
-    def "Compare to lower"() {
+    def "Not equals"() {
         given:
-        def boat1 = VehicleFactory.createBoat(1980, "Bayliner", "Extreme", true);
-        def boat2 = VehicleFactory.createBoat(1980, "Bayliner", "Extreme", false);
+        def boat1 = createBoat(1980, "Bayliner", "Extreme", true)
+        def boat2 = createBoat(1980, "Bayliner", "Extreme", false)
 
         expect:
-        boat1.compareTo(boat2) > 0
+        !boat1.equals(boat2)
     }
 
-    def "Compare to same"() {
+    def "Equals"() {
         given:
-        def boat1 = VehicleFactory.createBoat(1980, "Bayliner", "Extreme", true);
-        def boat2 = VehicleFactory.createBoat(1980, "Bayliner", "Extreme", true);
+        def boat1 = createBoat(1980, "Bayliner", "Extreme", true)
+        def boat2 = createBoat(1981, "Bayliner1", "Extreme1", true)
 
         expect:
-        boat1.compareTo(boat2) == 0
+        !boat1.equals(boat2)
     }
 
 }

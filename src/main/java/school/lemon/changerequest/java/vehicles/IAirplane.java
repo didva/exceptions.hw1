@@ -1,6 +1,6 @@
 package school.lemon.changerequest.java.vehicles;
 
-public interface IAirplane extends IVehicle, Comparable<IAirplane> {
+public interface IAirplane extends IVehicle {
 
     /**
      * Get airplane maximum height

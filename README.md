@@ -40,15 +40,7 @@ Class Vehicle has child classes which have additional private instance variables
         This boat is a 1980 Bayliner Extreme (with motor). 
         This airplane is a 1998 ABC Motors Comac that can reach 10000 feet.
 ```
-4. Implementing Comparable. 
-```
-    Each of the Car, Boat, and Airplane classes must implement the Comparable interface. 
-        Cars that have more horsepower are "bigger". 
-        Boats that are newer are "bigger". 
-        Airplanes that can reach higher maximum heights are "bigger". 
-    Please note, that conditions for equality are the same as for equals methods.
-```
-5. Implementing Steerable Interface. 
+4. Implementing Steerable Interface. 
 
     Each of the Car, Boat, and Airplane classes must implement the Steerable interface. 
     This interface has methods to accelerate(), steerLeft(), and steerRight().
