@@ -50,7 +50,7 @@ There two methods:
 
 There are several classes which describe Cafe. 
 Cafe serves Clients giving them coup of some kind of drink. 
-Client want has one method **drinkCoffee** with one argument **Drink**.
+Client has one method **drinkCoffee** with one argument **Drink**.
 If a drink is not a coffee - one exception should be thrown by Client. It should be handled by the Cafe and another drink given to Client.
 If coffee is too cold - second exception should be thrown by Client. It should be handled by the Cafe and coffee should be warmed up.
 If coffee is too hot - third exception should be thrown by Client. It should be handled by the Cafe and coffee should be cooled.

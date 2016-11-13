@@ -11,7 +11,8 @@ public class Cafe {
     }
 
     private Drink generateCup() {
-        return new Drink(DrinkType.getDrinkType(random.nextInt(100)), random.nextInt(100));
+        DrinkType[] drinkTypes = DrinkType.values();
+        return new Drink(drinkTypes[random.nextInt(drinkTypes.length)], random.nextInt(100));
     }
 
 }
