@@ -1,62 +1,7 @@
-OOP + Exceptions. Home work 1 
+Exceptions. Home work 1 
 =============================
 
-1 Extended Integer 
-------------------
-Implement all methods for ExtendedInteger class. The class contains:
-
-1. An int data field named value that stores the int value reprinted by this object. 
-2. A constructor that creates a ExtendedInteger object for the specified int value. 
-3. A get method that returns the int value. 
-4. Methods isEven(), isOdd(), and isPrime() that return true if the value is even, odd, or prime respectively. 
-5. Static methods isEven(int), isOdd(int), and isPrime(int) that return true if the specified value is even, odd, or prime respectively. 
-6. Static methods isEven(ExtendedInteger), isOdd(ExtendedInteger), and isPrime(ExtendedInteger) that return true if the specified value is even, odd, or prime respectively. 
-7. Methods equals(int) and equals(Object) that return true if the value in the object is equal to the specified value. 
-8. A static method parseInt(char\[\]) that converts an array of numeric characters to an int value. 
-9. A static method parseInt(String) that converts a string to an int value.
-
-2 Vehicles 
-----------
-Implement Vehicle class hierarchy. There should be the following: 
-
-1. Parent Class: Vehicle. 
-This abstract parent class has private instance variables, mutator methods, accessor methods, and constructor parameters for: Year manufactured; Make; Model.
-2. Child Classes: Car, Boat, Airplane. 
-Class Vehicle has child classes which have additional private instance variables, mutator methods, accessor methods, and constructor parameters for:
-```
-    Car has "int horsepower"; 
-    Boat has "boolean motorized"; 
-    Airplane has "int maximumHeightFeet".
-```
-3. Each of the Car, Boat, and Airplane classes must override the equals() and toString() methods.
-```
-    Methods equals(): 
-        Cars are equal if their horsepower is within 10 of one another. 
-        Boats are equal if they are both motorized, or both unmotorized. 
-        Airplanes are equal if their maximumHeightFeet is within 1000 of one another.         
-    The toString methods must return a String in these formats: 
-        This car is a 1999 Toyota Corrola with 140 hp. 
-        This boat is a 1980 Bayliner Extreme (with motor). 
-        This airplane is a 1998 ABC Motors Comac that can reach 10000 feet.
-```
-4. Implementing Steerable Interface. 
-```
-    Each of the Car, Boat, and Airplane classes must implement the Steerable interface. 
-    This interface has methods to accelerate(), steerLeft(), and steerRight().   
-        Methods accelerate():
-            Cars that accelerate simply return "fire pistons, turn wheels"; 
-            Boats that accelerate simply return "jet water";
-            Airplanes that accelerate simply return "fire engines on wings".
-        Methods steerLeft():
-            Cars that steer left simply return "turn wheels left";
-            Boats that steer left simply return "turn tiller left"; 
-            Airplanes that steer left simply return "lift wing flaps to turn left".
-        Methods steerRight():
-            Cars that steer right simply return "turn wheels right"; 
-            Boats that steer right simply return "turn tiller right"; 
-            Airplanes that steer right simply return "lift wing flaps to turn right".
-```
-3 Bank Account
+1 Bank Account
 --------------
 Create class that implements BankAccount interface. Your task is to write that class.
 The primary task of the BankAccount object is to keep track of the account balance. 
@@ -80,7 +25,7 @@ BankAccounts also have the following methods:
 6. **setRate** - changes the interest rate on this account;
 7. **toString** - returns a String representing this account. The String is of the form "Account #N, ($bbb.bb)", where N is the account number and bbb.bb is the account balance. Balance must have exactly two digits after the decimal with DOWN rounding.
 
-4 Transaction management for Bank Account
+2 Transaction management for Bank Account
 -----------------------------------------
 Implement TransactionalBankAccount interface. There are several additional things:
 
@@ -90,7 +35,7 @@ Implement TransactionalBankAccount interface. There are several additional thing
 
 Feel free to use BankAccount implemented in previous task.
 
-5 Transaction manager
+3 Transaction manager
 ---------------------
 
 As soon as we have TransactionalBankAccount it's not very convenient to execute bunch of operations in one transaction. 
@@ -99,3 +44,20 @@ There two methods:
  
 1. **execute** - executes array of operations. Do not guaranty that all operations are executed without errors and do not revert previous operations in case of errors.
 2. **executeInTransaction** - executes array of operations in transactions. Guaranty that ALL operations are executed or none of them (in case of any error). Should disable autoCommit after execution.
+
+4 Cafe
+------
+
+There are several classes which describe Cafe. 
+Cafe serves Clients giving them coup of some kind of drink. 
+Client want has one method **drinkCoffee** with one argument **Drink**.
+If a drink is not a coffee - one exception should be thrown by Client. It should be handled by the Cafe and another drink given to Client.
+If coffee is too cold - second exception should be thrown by Client. It should be handled by the Cafe and coffee should be warmed up.
+If coffee is too hot - third exception should be thrown by Client. It should be handled by the Cafe and coffee should be cooled.
+Client can be very unsatisfied by any other reason (random) and fourth exception should be thrown by Client. It that case Cafe can't serve Client and exception should be thrown.
+
+Create own exceptions hierarchy. Determine which exception should be thrown in each case.
+Exceptions should have information about temperature if Coffee was too cold or too hot.
+Print to console every exception that was handled.
+
+There is an App class that creates Cafe and generates Clients which Cafe should serve.
