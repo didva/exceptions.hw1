@@ -1,6 +1,8 @@
 Exceptions. Home work 1 
 =============================
 
+[![Join the chat at https://gitter.im/changerequest/exceptions.hw1](https://badges.gitter.im/changerequest/exceptions.hw1.svg)](https://gitter.im/changerequest/exceptions.hw1?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 1 Bank Account
 --------------
 Create class that implements BankAccount interface. Your task is to write that class.
