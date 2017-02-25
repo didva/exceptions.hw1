@@ -13,8 +13,7 @@ public final class AccountFactory {
      * @return bank account
      */
     public static BankAccount createBankAccount() {
-        //TODO: implement me
-        return null;
+        return new BankAccountImpl();
     }
 
     /**
@@ -22,7 +21,6 @@ public final class AccountFactory {
      * @return transactional bank account
      */
     public static TransactionalBankAccount createTransactionalBankAccount() {
-        //TODO: implement me
-        return null;
+        return new TransactionalBankAccountImpl(createBankAccount());
     }
 }

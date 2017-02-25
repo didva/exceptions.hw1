@@ -11,7 +11,10 @@ public class AccountTransactionManager {
      * @throws NullPointerException if {@code bankAccount == null}
      */
     public AccountTransactionManager(TransactionalBankAccount bankAccount) throws NullPointerException {
-        //TODO: implement me
+        if (bankAccount == null) {
+            throw new NullPointerException();
+        }
+        this.bankAccount = bankAccount;
     }
 
     /**
@@ -19,7 +22,10 @@ public class AccountTransactionManager {
      * @param operations array of account operations
      */
     public void execute(BankOperation[] operations) {
-        //TODO: implement me
+        bankAccount.setAutoCommit(true);
+        for (BankOperation operation : operations) {
+            executeOperation(operation);
+        }
     }
 
     /**
@@ -29,7 +35,35 @@ public class AccountTransactionManager {
      * @param operations array of account operations
      */
     public void executeInTransaction(BankOperation[] operations) throws IllegalArgumentException {
-        //TODO: implement me
+        try {
+            bankAccount.setAutoCommit(false);
+            for (BankOperation operation : operations) {
+                executeOperation(operation);
+            }
+            bankAccount.commit();
+        } catch (IllegalArgumentException ex) {
+            bankAccount.revert();
+            throw ex;
+        } finally {
+            bankAccount.setAutoCommit(true);
+        }
+    }
+
+    private void executeOperation(BankOperation operation) {
+        switch (operation.getType()) {
+            case WITHDRAW:
+                bankAccount.withdraw(operation.getValue());
+                break;
+            case DEPOSIT:
+                bankAccount.deposit(operation.getValue());
+                break;
+            case ADD_INTEREST:
+                bankAccount.addInterest();
+                break;
+            case SET_RATE:
+                bankAccount.setRate(operation.getValue());
+                break;
+        }
     }
 
 }

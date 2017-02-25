@@ -17,4 +17,13 @@ public class Drink {
     public int getTemperature() {
         return temperature;
     }
+
+    public void warmUp() {
+        temperature += 5;
+    }
+
+    public void coldDown() {
+        temperature -= 5;
+    }
+
 }
